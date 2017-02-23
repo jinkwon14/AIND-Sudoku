@@ -3,17 +3,17 @@
 
 # Question 1 (Naked Twins)
 Q: How do we use constraint propagation to solve the naked twins problem?  
-A: *Student should provide answer here*
+A: Applying a *Naked Twins* method once to the sudoku board eliminate possible occurances of a pair of values from a number of boxes on a sudoku board. After such values are eliminated, more values in other parts of the board may be eliminated by the Naked Twins (or other) method. This is exactly the application of constraint propagation: enforcing a constraint in one part of the board introduces new constraints in other parts of the board.
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: *Student should provide answer here*
+A: Diagonal sudoku problem introduces an additional constraint to consider. This is beneficial for the constraint propagation in solving sudoku because now more values fall under the constraint(or conditions to be eliminated) of each elimination method, therefore more values are eliminated, and in turn more constrains are introduces in other parts of the board (TODO: graph substantiating this point).
 
 ### Install
 
 This project requires **Python 3**.
 
-We recommend students install [Anaconda](https://www.continuum.io/downloads), a pre-packaged Python distribution that contains all of the necessary libraries and software for this project. 
+We recommend students install [Anaconda](https://www.continuum.io/downloads), a pre-packaged Python distribution that contains all of the necessary libraries and software for this project.
 Please try using the environment we provided in the Anaconda lesson of the Nanodegree.
 
 ##### Optional: Pygame
