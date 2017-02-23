@@ -24,15 +24,15 @@ Propagating constraints to the two boxes, C3 and G3, enforced some values to be 
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
 A: We solve diagonal sudoku problem with an additional constraint on hand. This is a great advantage in terms of solving a sudoku puzzle because now more values fall under the constraints(four compared to three) of each elimination method. I will demonstrate this with an exmaple, extending to the one used in the previous question.  
 
-Figure 2-1 shows a new sudoku board, where highlighted in yellow is a new diagnoal unit of the box C3. Let's now assume again that C3 has 1 and 2 as the only two possible values. 
+Figure 2-1 shows a new sudoku board, where highlighted in yellow is a new diagnoal unit of the box C3. Let's now assume again that C3 has 1 and 2 as the only two possible values.  
 ![Sudoku Board with Diag](images/21.png "Sudoku Board with Diagonal unit")
 
 
-With an aditinoal diagonal unit, six additional boxes now may have the value 2 assuming that C3 arbitrarily choose 1 as its value.
+With an aditinoal diagonal unit, six additional boxes now may have the value 2 assuming that C3 arbitrarily choose 1 as its value.  
 ![Value Propagation with Diag](images/22.png "Value Propagation with Diagonal unit")
 
 
-Again, assume that we have G3 that also has either 1 or 2 as possible values. The overlapping-peers region for C3 and G3 is shown on the right side of Figure 2-3 as blue/yellow checked boxes. 
+Again, assume that we have G3 that also has either 1 or 2 as possible values. The overlapping-peers region for C3 and G3 is shown on the right side of Figure 2-3 as blue/yellow checked boxes.  
 ![Constraint Propagation with Diag](images/23.png "Constraint Propagation with Diagonal unit")
 
 With an additional diagonal unit on hand, we can now eliminate 1 and 2 from three additional boxes.  
