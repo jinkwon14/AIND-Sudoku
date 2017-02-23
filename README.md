@@ -5,7 +5,7 @@
 Q: How do we use constraint propagation to solve the naked twins problem?  
 A: I will answer to this question with an example.  
 Sudoku puzzle has one rule(constraint): each one of 9 boxs in a unit must have a unique single digit number from 1 to 9.
-Figure 1-1 shows a typical sudoku board. 
+Figure 1-1 shows a typical sudoku board.  
 ![Sudoku Board](images/11.png "Sudoku Board")
 
 Highlighted in yellow are three types of units (*row*, *column*, and a *9x9 box*), which all together composes a *peer*. Figure 1-2 shows the three types of units (a fourth, diagnoal unit will be introduced in question 2).   
@@ -22,7 +22,21 @@ Propagating constraints to the two boxes, C3 and G3, enforced some values to be 
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: Diagonal Sudoku problem introduces an additional constraint to consider. This is beneficial in terms of using constraint propagation for solving sudoku puzzle because now more values fall under the constraints(or conditions to be eliminated) of each elimination method. Therefore more values are eliminated, and in turn, more constraints are introduced in other parts of the board (TODO: graph substantiating this point).
+A: We solve diagonal sudoku problem with an additional constraint on hand. This is a great advantage in terms of solving a sudoku puzzle because now more values fall under the constraints(four compared to three) of each elimination method. I will demonstrate this with an exmaple, extending to the one used in the previous question.  
+
+Figure 2-1 shows a new sudoku board, where highlighted in yellow is a new diagnoal unit of the box C3. Let's now assume again that C3 has 1 and 2 as the only two possible values. 
+![Sudoku Board with Diag](images/21.png "Sudoku Board with Diagonal unit")
+
+
+With an aditinoal diagonal unit, six additional boxes now may have the value 2 assuming that C3 arbitrarily choose 1 as its value.
+![Value Propagation with Diag](images/22.png "Value Propagation with Diagonal unit")
+
+
+Again, assume that we have G3 that also has either 1 or 2 as possible values. The overlapping-peers region for C3 and G3 is shown on the right side of Figure 2-3 as blue/yellow checked boxes. 
+![Constraint Propagation with Diag](images/23.png "Constraint Propagation with Diagonal unit")
+
+With an additional diagonal unit on hand, we can now eliminate 1 and 2 from three additional boxes.  
+This advantage coming from an additional diagonal constraint applies to all elimination methods including the `eliminate` and `only_choice`.
 
 ### Install
 
